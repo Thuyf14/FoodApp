@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 // import 'package:provider/provider.dart';
 
 import '../../model/cart_item.dart';
+import '../../model/product.dart';
 import '../shared/dialog_utils.dart';
 import 'cart_manager.dart';
 class CartItemCard extends StatelessWidget {
@@ -12,8 +13,8 @@ class CartItemCard extends StatelessWidget {
   const CartItemCard({
     required this.productId,
     required this.cardItem,
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class CartItemCard extends StatelessWidget {
         ),
       ),
       direction: DismissDirection.endToStart,
-      confirmDismiss: (directiion) {
+      confirmDismiss: (direction) {
         return showConfirmDialog(
           context,
           'Bạn có chắc muốn xoá sản phẩm này không?',
@@ -43,11 +44,11 @@ class CartItemCard extends StatelessWidget {
       onDismissed: (direction) {
         context.read<CartManager>().removeItem(productId);
       },
-      child: buildItemCard(),
+      child: buildItemCard(context),
     );
   }
 
-  Widget buildItemCard() {
+  Widget buildItemCard(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(
         horizontal: 15,
@@ -61,9 +62,37 @@ class CartItemCard extends StatelessWidget {
           ),
           title: Text(cardItem.title),
           subtitle: Text('Tổng: ${(cardItem.price * cardItem.quantity)}'),
-          trailing: Text('${cardItem.quantity}x'),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: Icon(Icons.remove),
+                onPressed: () {
+                  context.read<CartManager>().removeSingleItem(productId);
+                },
+              ),
+              Text('${cardItem.quantity}'),
+              IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () {
+                  context.read<CartManager>().addItem(Product(
+                    id: cardItem.productId,
+                    title: cardItem.title,
+                    price: cardItem.price,
+                    price0: cardItem.price0,
+                    imageUrl: cardItem.imageUrl,
+                    category: cardItem.category,
+                    author: cardItem.author,
+                    coutry: cardItem.coutry,
+                    description: '',
+                  ));
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

@@ -31,6 +31,7 @@ class ProductsService extends FirebaseService {
       if (response.statusCode != 200) {
         return products;
       }
+      print(productsMap);
       productsMap.forEach((id, product) {
         products.add(Product.fromJson({
           'id': id,

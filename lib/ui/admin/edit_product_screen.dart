@@ -24,8 +24,8 @@ class EditProductScreen extends StatefulWidget {
         author: '',
         coutry: '',
         description: '',
-        price: 0,
-        price0: 0,
+        price: 0.0,
+        price0: 0.0,
         imageUrl: '',
       );
     } else {

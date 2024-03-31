@@ -38,7 +38,7 @@ class ProductsManager with ChangeNotifier {
 
   Future<void> fetchProducts() async {
     _items = await _productsService.fetchProducts();
-    print(_items);
+    print("BBBBBBBBBBBBBBBBBBBBB");
     print(_items);
     notifyListeners();
   }
