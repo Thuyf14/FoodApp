@@ -90,6 +90,7 @@ class _OrderItemCardState extends State<OrderItemCard> {
                       ),
                     ),
                     Text(
+                      //'${prod.quantity}x${prod.price.toStringAsFixed(0)}',
                       '${prod.quantity}x${formatCurrency.format(prod.price)}',
                       style: const TextStyle(
                         fontSize: 18,

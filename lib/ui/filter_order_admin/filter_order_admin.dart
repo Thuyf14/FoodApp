@@ -19,12 +19,12 @@ class _FilterOrderAdminState extends State<FilterOrderAdmin> {
   void initState() {
     super.initState();
     _fetchOrders = context.read<FilterOrderAdminManager>().fetchOrders();
+    print(_fetchOrders);
   }
 
   @override
   Widget build(BuildContext context) {
     final formatCurrency = NumberFormat.simpleCurrency(locale: 'vi_VN');
-    int a = 0;
     return Scaffold(
         appBar: AppBar(
           title: const Text('Thống kê doanh thu theo quý'),
@@ -35,7 +35,7 @@ class _FilterOrderAdminState extends State<FilterOrderAdmin> {
                 future: _fetchOrders,
                 builder: (contex, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
-                    // return Center(child: Text(snapshot.data!.first.amount.toString()),);
+                    // Center(child: Text(snapshot.data!.first.amount.toString()),);
                     return Container(
                       child: Column(
                         children: [

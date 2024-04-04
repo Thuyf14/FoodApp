@@ -350,7 +350,7 @@ class OrderDetailScreenState extends State<OrderDetailScreen> {
         Container(
             padding: EdgeInsets.only(left: 20),
             child: const Text(
-              'Hình thức',
+              'Hình thức ',
               style: TextStyle(
                 color: Colors.black54,
                 fontSize: 20,
@@ -365,79 +365,4 @@ class OrderDetailScreenState extends State<OrderDetailScreen> {
       ],
     );
   }
-
-  // Widget buildPayRow() {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     children: <Widget>[
-  //       Container(
-  //           padding: EdgeInsets.only(left: 20),
-  //           child: Text(
-  //             'Giá vé',
-  //             style: TextStyle(
-  //               color: Colors.black54,
-  //               fontSize: 20,
-  //             ),
-  //           )),
-  //       Container(
-  //         alignment: Alignment.centerRight,
-  //         padding: EdgeInsets.only(right: 20),
-  //         child: Text(
-  //             NumberFormat.currency(locale: "vi_VN", symbol: "đ")
-  //                 .format(widget.order.tiketPrice),
-  //             style: TextStyle(fontSize: 16, color: Colors.black)),
-  //       ),
-  //     ],
-  //   );
-  // }
-
-  // Widget buildSeatQuantityRow(){
-  //   return
-  //   Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     children: <Widget>[
-  //       Container(
-  //           padding: EdgeInsets.only(left: 20),
-  //           child: Text(
-  //             'Số lượng ghế',
-  //             style: TextStyle(
-  //               color: Colors.black54,
-  //               fontSize: 20,
-  //             ),
-  //           )),
-  //       Container(
-  //         alignment: Alignment.centerRight,
-  //         padding: EdgeInsets.only(right: 20),
-  //         child: Text(
-  //             widget.order.seats.length.toString(),
-  //             style: TextStyle(fontSize: 16, color: Colors.black)),
-  //       ),
-  //     ],
-  //   );
-  // }
-
-  // Widget buildTotalRow(){
-
-  //   return
-  //   Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     children: <Widget>[
-  //       Container(
-  //           padding: EdgeInsets.only(left: 20),
-  //           child: Text(
-  //             'Tổng thanh toán',
-  //             style: TextStyle(
-  //               color: Colors.black54,
-  //               fontSize: 20,
-  //             ),
-  //           )),
-  //       Container(
-  //         alignment: Alignment.centerRight,
-  //         padding: EdgeInsets.only(right: 20),
-  //         child: Text(NumberFormat.currency(locale: "vi_VN",symbol: "đ").format(widget.order.total),
-  //             style: TextStyle(fontSize: 16, color: Colors.black)),
-  //       ),
-  //     ],
-  //   );
-  // }
 }

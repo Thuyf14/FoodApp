@@ -65,7 +65,7 @@ class CartScreen extends StatelessWidget {
             const Spacer(),
             Chip(
               label: Text(
-                '${cart.totalAmount}',
+                '${cart.totalAmount}', // Định dạng số thành số nguyên
                 style: TextStyle(
                   color: Theme.of(context).primaryTextTheme.titleLarge?.color,
                 ),

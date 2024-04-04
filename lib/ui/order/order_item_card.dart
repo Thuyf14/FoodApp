@@ -151,7 +151,7 @@ class _OrderItemCardState extends State<OrderItemCard> {
         trailing: ElevatedButton(
           child: Text("Đã nhận"),
           onPressed: () {
-            print("Nhận được hàng rồi còn click gì nữa mèn ơi");
+            print("Nhận được hàng rồi");
             // setState(() {
             //   final a = widget.order.orderStatus = 3;
             //   print(a);

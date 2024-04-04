@@ -24,8 +24,8 @@ class EditProductScreen extends StatefulWidget {
         author: '',
         coutry: '',
         description: '',
-        price: 0.0,
-        price0: 0.0,
+        price: 0.0 ,
+        price0: 0.0 ,
         imageUrl: '',
       );
     } else {
@@ -213,6 +213,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   TextFormField buildPrice0Field() {
     return TextFormField(
+      // Chuyển đổi giá trị double thành int và sau đó thành chuỗi
       initialValue: _editedProduct.price0.toString(),
       decoration: const InputDecoration(labelText: 'Giá gốc'),
       textInputAction: TextInputAction.next,

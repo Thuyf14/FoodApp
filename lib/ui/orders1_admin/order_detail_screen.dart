@@ -293,6 +293,7 @@ class OrderDetailScreenState extends State<OrderDetailScreenAdmin> {
           child: Text("Số lượng x giá",
               style: TextStyle(fontSize: 16, color: Colors.black)),
         ),
+        
       ],
     );
   }

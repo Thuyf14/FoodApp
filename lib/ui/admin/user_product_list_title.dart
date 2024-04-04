@@ -38,7 +38,7 @@ class UserProductListTile extends StatelessWidget {
   Widget buildEditButton(BuildContext context) {
     return IconButton(
       onPressed: () async {
-        print("den trang edit");
+        print("đến trang edit");
         Navigator.of(context).pushNamed(
           EditProductScreen.routeName,
           arguments: product.id,
@@ -60,7 +60,7 @@ class UserProductListTile extends StatelessWidget {
             'Sản phẩm đã xóa',
             textAlign: TextAlign.center,
           )));
-        print("da xoa");
+        print("Đã xóa");
       },
       icon: const Icon(Icons.delete),
       color: Theme.of(context).colorScheme.error,

@@ -76,18 +76,18 @@ class AdminAppDrawer extends StatelessWidget {
                   .pushReplacementNamed(OrdersScreenAdmin3.routeName);
             },
           ),
+          // const Divider(),
+          // ListTile(
+          //   leading: const Icon(Icons.pie_chart),
+          //   title: const Text('Thống kê đơn hàng'),
+          //   onTap: () {
+          //     Navigator.of(context)
+          //         .pushReplacementNamed(PieChartScreen.routeName);
+          //   },
+          // ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.pie_chart),
-            title: const Text('Thống kê đơn hàng'),
-            onTap: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(PieChartScreen.routeName);
-            },
-          ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.headphones),
+            leading: const Icon(Icons.filter_alt_sharp),
             title: const Text('Thống kê doanh thu'),
             onTap: () {
               Navigator.of(context)
