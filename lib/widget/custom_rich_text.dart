@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//hien thi van ban theo giao dien nguoi dung
 class CustomRichText extends StatelessWidget {
   /// MARK: - Initials;
   final String? title;

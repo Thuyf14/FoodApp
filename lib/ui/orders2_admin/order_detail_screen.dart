@@ -207,7 +207,7 @@ class OrderDetailScreenState extends State<OrderDetailScreenAdmin> {
         Container(
             padding: EdgeInsets.only(left: 20),
             child: const Text(
-              'Người bán',
+              'Người làm món',
               style: TextStyle(
                 color: Colors.black54,
                 fontSize: 20,
@@ -313,7 +313,7 @@ class OrderDetailScreenState extends State<OrderDetailScreenAdmin> {
         Container(
           alignment: Alignment.centerRight,
           padding: EdgeInsets.only(right: 20),
-          child: Text('${widget.order.amount}',
+          child: Text('${(widget.order.amount).toStringAsFixed(0)}',
               style: TextStyle(fontSize: 16, color: Colors.black)),
         ),
       ],

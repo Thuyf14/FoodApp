@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../../model/order_item.dart';
 import 'filter_admin_manager.dart';
 
+//hien thi va loc ds cac don hang cua admin
+//thong ke doanh thu
 class FilterOrderAdmin extends StatefulWidget {
   static const routeName = '/filter-order-admin';
   const FilterOrderAdmin({super.key});
@@ -27,7 +29,7 @@ class _FilterOrderAdminState extends State<FilterOrderAdmin> {
     final formatCurrency = NumberFormat.simpleCurrency(locale: 'vi_VN');
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Thống kê doanh thu theo quý'),
+          title: const Text('Thống kê doanh thu'),
         ),
         drawer: const AdminAppDrawer(),
         body: SingleChildScrollView(

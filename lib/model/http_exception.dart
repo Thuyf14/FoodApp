@@ -1,10 +1,11 @@
 class HttpException implements Exception {
+  //chuoi luu thong diep loi
   final String message;
 
-  HttpException(this.message);
+  HttpException(this.message);//tao 1 doi tuong httpE vs td loi cu the
 
   HttpException.firebase(String code)
-      : message = _translateFirebaseErrorCode(code);
+      : message = _translateFirebaseErrorCode(code); //dich ma loi
 
   static String _translateFirebaseErrorCode(code) {
     switch (code) {

@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'cart_manager.dart';
 import 'cart_item_card.dart';
 
+//Gio hang, phan tong tien va nut dat hang
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
 
@@ -36,7 +37,7 @@ class CartScreen extends StatelessWidget {
       ),
     );
   }
-
+  //Dsach cac sp trong gio hang
   Widget buildCartDetails(CartManager cart) {
     return ListView(
       children: cart.productEntries
@@ -49,7 +50,7 @@ class CartScreen extends StatelessWidget {
           .toList(),
     );
   }
-
+  //Xay dung thanh tren gio hang: tong tien va nut dat hang
   Widget buildCartSummary(CartManager cart, BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(15),
@@ -65,7 +66,7 @@ class CartScreen extends StatelessWidget {
             const Spacer(),
             Chip(
               label: Text(
-                '${cart.totalAmount}', // Định dạng số thành số nguyên
+                '${cart.totalAmount.toStringAsFixed(0)}', // Định dạng số thành số nguyên
                 style: TextStyle(
                   color: Theme.of(context).primaryTextTheme.titleLarge?.color,
                 ),
@@ -73,6 +74,7 @@ class CartScreen extends StatelessWidget {
               backgroundColor: Theme.of(context).primaryColor,
             ),
             TextButton(
+              //Neu tong tien lon hon 0, nhan dat hang thi chuyen den PaymentCartScreen
               onPressed: 
               // (){
               //   print("di den trang dat hang");

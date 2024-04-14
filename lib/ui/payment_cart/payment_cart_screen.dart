@@ -10,6 +10,7 @@ import '../order/order_manager.dart';
 import '../shared/dialog_utils.dart';
 import '../../widget/custom_rich_text.dart';
 
+//trang thanh toán khi muon thanh toan don hang tu gio hang
 class PaymentCartScreen1 extends StatefulWidget {
   static const routeName = '/payment-cart1';
 
@@ -213,7 +214,7 @@ class _PaymentCartScreen1State extends State<PaymentCartScreen1> {
             ),
             CustomRowText(
               title: 'Tổng giá',
-              value: '${cart.totalAmount}',
+              value: '${(cart.totalAmount).toStringAsFixed(0)}',
             )
           ],
         ),

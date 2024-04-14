@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../ui/products/products_manager.dart';
 import '../../model/product.dart';
 import 'edit_product_screen.dart';
-
+//Screen tim kiem
 class SearchAdminScreen extends StatefulWidget {
   static const routeName = '/search1';
 
@@ -17,6 +17,7 @@ class _SearchAdminScreenState extends State<SearchAdminScreen> {
   @override
   void initState() {
     super.initState();
+    //Cap nhat trang thai widget. Ds sp hien thi gan bang ds sp hien co tu ProductManager
     setState(() {
       final productsManager = context.read<ProductsManager>();
       late List<Product> product = productsManager.items;
@@ -37,6 +38,8 @@ class _SearchAdminScreenState extends State<SearchAdminScreen> {
           title: const Text('Tìm kiếm - Admin'),
         ),
         body: Column(children: [
+          //Nhập từ khóa tìm kiếm
+          //Khi nd thay đổi, ds sp sẽ được cập nhật tương ứng thông qua hàm updateList trong ProductManager
           TextField(
             onChanged: (value) => setState(() {
               context.read<ProductsManager>().updateList(value);
@@ -62,10 +65,15 @@ class _SearchAdminScreenState extends State<SearchAdminScreen> {
                           fontSize: 20,
                           fontWeight: FontWeight.normal),
                     ))
+                    //Hiển thị ds sp.
+                    //Tao 1 listview de chi render cac item can hien thi len man hinh
+                    //itemCount: so luong phan tu, lay tu display_pr_co
                   : ListView.builder(
                       itemCount: productsManager.display_product_Count,
+                      //ListTile moi sp trong ds đc hien thi dang listtile, gom tieu de, gia, hinh anh, bieu tuong chinh sua, xoa
                       itemBuilder: (context, index) => ListTile(
                         onTap: () {
+                          //Chuyển huong den chi tiet sp
                           // Navigator.of(context).push(MaterialPageRoute(
                           //     builder: (context) =>
                           //         ProductDetailScreen(product[index])));
@@ -75,7 +83,7 @@ class _SearchAdminScreenState extends State<SearchAdminScreen> {
                           style: TextStyle(color: Colors.black),
                         ),
                         subtitle: Text(
-                          '${product[index].price}',
+                          '${product[index].price.toStringAsFixed(0)}',
                           style: TextStyle(color: Colors.black),
                         ),
                         leading: CircleAvatar(

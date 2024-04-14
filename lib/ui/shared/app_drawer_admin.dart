@@ -10,6 +10,7 @@ import '../orders_admin/order_screen.dart';
 import '../personal/personal_screen.dart';
 import '../pie_chart/pie_chart.dart';
 
+//Thanh dieu huong o vai tro admin
 class AdminAppDrawer extends StatelessWidget {
   const AdminAppDrawer({super.key});
 

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../cart/cart_manager.dart';
 // import '../order/orders_screen.dart';
-
+//Hop thoai 2 nut co, khong
 Future<bool?> showConfirmDialog(BuildContext context, String message) {
   return showDialog(
     context: context,
@@ -46,6 +46,7 @@ Future<bool?> showConfirmDialog(BuildContext context, String message) {
 //     ),
 //   );
 // }
+//Nut ok
 Future<bool?> showConfirmDialogZaloCancel(BuildContext context, String message) {
   return showDialog(
     context: context,

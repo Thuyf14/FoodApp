@@ -8,7 +8,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../model/http_exception.dart';
 import '../model/auth_token.dart';
 import '../services/firebase_services.dart';
-
+//xu ly xac thuc nguoi dung: dang ki, dag nhap
+//ktr vai tro nguoi dung
+//Luu tru token xac thuc
 class AuthService {
   static const _authTokenKey = 'authToken';
   late final String? _apiKey;
@@ -57,7 +59,7 @@ class AuthService {
               'role': 'user'
             }));
       }
-
+//ktr vai tro nguoi dung dua tren token xac thuc
       authToken.role = await isAdmin(authToken);
 
       _saveAuthToken(authToken);

@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:foodapp/services/auth_services.dart';
 
 import '../../model/auth_token.dart';
-
+//Quan ly xac thuc nguoi dung
 class AuthManager with ChangeNotifier {
   AuthToken? _authToken;
   Timer? _authTimer;
@@ -24,11 +24,11 @@ class AuthManager with ChangeNotifier {
     _autoLogout();
     notifyListeners();
   }
-
+//dang ki nguoi dung moi voi emai va pass,sdt,...
   Future<void> signup(String email, String password, String phone, String name, String address) async {
     _setAuthToken(await _authService.signup(email, password, phone, name,address));
   }
-
+//dang nhap nguoi dung  voi emai va pass
   Future<void> login(String email, String password) async {
     _setAuthToken(await _authService.login(email, password));
   }

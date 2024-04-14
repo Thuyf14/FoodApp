@@ -4,6 +4,7 @@ import '../payment_cart/payment_cart_screen.dart';
 import '../../model/product.dart';
 import '../cart/cart_manager.dart';
 
+//hien thi thong tin chi tiet va 1 sp, them sp vao gio hang de dat hang
 class ProductDetailScreen extends StatelessWidget {
   static const routeName = '/product-detail';
   const ProductDetailScreen(

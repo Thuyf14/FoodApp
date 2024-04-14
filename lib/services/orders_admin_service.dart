@@ -6,7 +6,7 @@ import 'auth_services.dart';
 
 class OrderServiceAdmin extends FirebaseService {
   OrderServiceAdmin() : super();
-
+//Lay dsach don hang dua vao trang thai don hang
   Future<List<OrderItem>> fetchOrders(value) async {
     late List<OrderItem> orders = [];
     try {
@@ -53,21 +53,5 @@ class OrderServiceAdmin extends FirebaseService {
     }
   }
 
-  // Future<OrderItem?> addOrder(OrderItem order) async {
-  //   try {
-  //     final url = Uri.parse('$databaseUrl/orders.json?auth=$token');
-  //     final response = await http.post(url, body: json.encode(order.toJson()));
-
-  //     if (response.statusCode != 200) {
-  //       throw Exception(json.decode(response.body)['error']);
-  //     }
-
-  //     print(json.decode(response.body));
-
-  //     return order.copyWith(id: json.decode(response.body));
-  //   } catch (error) {
-  //     print(error);
-  //     return null;
-  //   }
-  // }
+ 
 }

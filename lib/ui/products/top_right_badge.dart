@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//badge bên phải
 class TopRightBadge extends StatelessWidget {
   const TopRightBadge({
     super.key,

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-
+//Hien thi tieu de cua ung dung
 class AppBanner extends StatelessWidget {
   const AppBanner({
     Key? key,

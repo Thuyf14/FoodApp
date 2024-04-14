@@ -11,7 +11,12 @@ import '../services/firebase_services.dart';
 
 class ProductsService extends FirebaseService {
   // ProductsService() : super();
+  //nhan  authtoken hoac null, truyen authtoken vao constructor lop cha
   ProductsService([AuthToken? authToken]) : super(authToken);
+  //lay ds sp tu CSDL
+  //gui get den url csdl kem token xac thuc
+  //loi tra ds sp trong
+  //k, chuyen doi phan tu o productsMap thanh dtuong product va them vao ds products
   Future<List<Product>> fetchProducts() async {
     final List<Product> products = [];
     try {
@@ -47,7 +52,8 @@ class ProductsService extends FirebaseService {
       return products;
     }
   }
-
+  //Them sp moi
+  //thanh cong, tra ve dtuong product moi voi ID duoc cung cap boi csdl
   Future<Product?> addProduct(Product product) async {
     try {
       final url = Uri.parse('$databaseUrl/products.json?auth=$token');
@@ -64,7 +70,8 @@ class ProductsService extends FirebaseService {
       return null;
     }
   }
-
+  //Cap nhat thong tin sp da co
+  // gui yeu cau patch vs thong tin cap nhat cua sp toi url cua sp kem theo token xac thuc
 // products.forEach((id, element) => print(element));
   Future<bool> updateProduct(Product product) async {
     try {
@@ -83,7 +90,7 @@ class ProductsService extends FirebaseService {
       return false;
     }
   }
-
+//Xoa 1 sp, gui yeu cau delete toi url cua sp can xoa kem token xac thuc
   Future<bool> deleteProduct(String id) async {
     try {
       final url = Uri.parse('$databaseUrl/products/$id.json?auth=$token');

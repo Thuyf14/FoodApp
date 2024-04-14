@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../model/product.dart';
 import 'product_detail_screen.dart';
 
+//trang chu, hien thi sp gom anh va thong tin voi bieu tuong gio hang
 class ProductGridTile extends StatelessWidget {
   const ProductGridTile(
     this.product, {
@@ -14,6 +15,15 @@ class ProductGridTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     // Mô phỏng danh sách sản phẩm
+    //List<Product> products = [
+      //Product(
+        //id: '1',
+        //title: 'Product 1',
+        //imageUrl: 'url_to_product_image_1',
+       // price: 10.0,
+      //),
+      //];
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(

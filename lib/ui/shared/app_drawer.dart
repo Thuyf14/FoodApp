@@ -10,6 +10,7 @@ import '../order/orders_screen.dart';
 import '../admin/user_product_screen.dart';
 import '../personal/personal_screen.dart';
 
+//Thanh dieu huong nguoi dung
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
@@ -40,24 +41,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           const Divider(),
-          // Consumer<CartManager>(
-          //   builder: (context, cartManager, child) {
-          //     return TopRightBadge(
-          //       data: cartManager.productCount,
-          //       child: Row(
-          //         children: [
-          //           IconButton(
-          //               onPressed: () {
-          //                 Navigator.of(context).pushNamed(CartScreen.routeName);
-          //               },
-          //               icon: const Icon(Icons.shopping_cart)),
-
-          //           Text('Gio hang')
-          //         ],
-          //       ),
-          //     );
-          //   },
-          // ),
+         
           ListTile(
             leading: const Icon(Icons.shopping_cart),
             title: const Text('Giỏ hàng'),

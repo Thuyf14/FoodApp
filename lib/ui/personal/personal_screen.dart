@@ -6,6 +6,7 @@ import '../auth/auth_manager.dart';
 import '../shared/dialog_utils.dart';
 import '../../services/user_service.dart';
 
+//Cap nhat thong tin ca nhan
 class PersonalScreen extends StatefulWidget {
   static const routeName = '/personal';
 

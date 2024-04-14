@@ -5,6 +5,7 @@ import 'dart:math';
 import '../order/order_manager.dart';
 import '../../model/order_item.dart';
 
+//Chi tiet don hang
 class OrderDetailScreen extends StatefulWidget {
   static const routeName = 'order-detail-screen';
   final OrderItem order;
@@ -207,7 +208,7 @@ class OrderDetailScreenState extends State<OrderDetailScreen> {
         Container(
             padding: EdgeInsets.only(left: 20),
             child: const Text(
-              'Người bán',
+              'Người làm món',
               style: TextStyle(
                 color: Colors.black54,
                 fontSize: 20,
@@ -313,7 +314,7 @@ class OrderDetailScreenState extends State<OrderDetailScreen> {
         Container(
           alignment: Alignment.centerRight,
           padding: EdgeInsets.only(right: 20),
-          child: Text('${widget.order.amount}',
+          child: Text('${(widget.order.amount).toStringAsFixed(0)}',
               style: TextStyle(fontSize: 16, color: Colors.black)),
         ),
       ],

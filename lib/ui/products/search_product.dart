@@ -5,6 +5,7 @@ import '../../model/product.dart';
 import 'product_detail_screen.dart';
 import 'products_manager.dart';
 
+//Tim kiem sp
 class SearchScreen extends StatefulWidget {
   static const routeName = '/search';
 
@@ -89,7 +90,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           style: TextStyle(color: Colors.black),
                         ),
                         subtitle: Text(
-                          '${product[index].price}',
+                          '${(product[index].price).toStringAsFixed(0)}',
                           style: TextStyle(color: Colors.black),
                         ),
                         leading: CircleAvatar(

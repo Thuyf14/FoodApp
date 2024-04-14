@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Man hinh cho, loading
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 

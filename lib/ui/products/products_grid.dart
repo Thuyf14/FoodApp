@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'product_grid_tile.dart';
 import 'products_manager.dart';
 import '../../model/product.dart';
-
+//trang chu, ds sp
 class ProductsGrid extends StatelessWidget {
   const ProductsGrid({super.key});
 

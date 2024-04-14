@@ -16,10 +16,13 @@ class ChatbotScreen1 extends StatefulWidget {
 
 class _ChatbotScreen1State extends State<ChatbotScreen1> {
   final messageInsert = TextEditingController();
+  //Danh sach chua tn gom data 0 or 1 xac dinh tu nguoi dung hay chatbot va mess nd tn
   List<Map> _message = [];
+  //Gui tn toi server chatbot va nhan phan hoi
   Future<void> _sendMessage(String message) async {
     final http.Response response = await http.post(
-      Uri.parse('https://0ea1-14-254-71-197.ngrok-free.app/webhooks/rest/webhook'),
+      Uri.parse(
+          'https://e5a0-2401-d800-f729-2702-781e-9e0b-b2fd-6476.ngrok-free.app/webhooks/rest/webhook'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8'
       },
@@ -36,6 +39,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
     }
   }
 
+  //Giao dien man hinh
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +48,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
           "Chatbot",
         ),
       ),
+      //menu huong ben trai
       drawer: const AppDrawer(),
       body: Container(
         child: Column(
@@ -51,20 +56,24 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
             Container(
               padding: const EdgeInsets.only(top: 15, bottom: 10),
               child: Text(
+                //Hien thi thoi gian hien tai
                 "Hôm nay, ${DateFormat("Hm").format(DateTime.now())}",
                 style: const TextStyle(fontSize: 15),
               ),
             ),
             Flexible(
+              //Hien thi ds tn voi ListView.builder
                 child: ListView.builder(
                     reverse: true,
                     itemCount: _message.length,
-                    itemBuilder: (context, index) => chat(
+                    itemBuilder: (context, index) => chat( //hien thi tung tn trong listview
                         _message[index]["data"],
                         _message[index]["message"].toString()))),
+            //Khoang cach giua tn va phan nhap tn
             const SizedBox(
               height: 20,
             ),
+            //duong ke chia k/c tn va phan nhap tn
             const Divider(
               height: 5.0,
               color: Colors.grey,
@@ -79,6 +88,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
                   ),
                   padding: EdgeInsets.only(left: 15),
                   child: TextFormField(
+                    //nguoi dung nhap tn
                     controller: messageInsert,
                     decoration: const InputDecoration(
                       hintText: "Nhập câu hỏi...",
@@ -93,12 +103,14 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
                     onChanged: (value) {},
                   ),
                 ),
+                //icon gui tn
                 trailing: IconButton(
                     icon: const Icon(
                       Icons.send,
                       size: 30.0,
                       color: Colors.black,
                     ),
+                    //xu ly khi user nhan nut gui tn
                     onPressed: () {
                       if (messageInsert.text.isEmpty) {
                         print("empty message");
@@ -128,15 +140,17 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
   }
 
   //for better one i have use the bubble package check out the pubspec.yaml
-
+  //widget chua tn dua vao du lieu dau vao
   Widget chat(int data, String message) {
     return Container(
       padding: EdgeInsets.only(left: 20, right: 20),
       child: Row(
         mainAxisAlignment:
+        //Xac dinh tn tu user-1 hay chatbot-0
             data == 1 ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           data == 0
+          //h/a cua nguoi nhan tn
               ? Container(
                   height: 40,
                   width: 40,
@@ -147,6 +161,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
               : Container(),
           Padding(
             padding: EdgeInsets.all(10.0),
+            //hien thi nd tn duoi dang bubble
             child: Bubble(
                 radius: Radius.circular(15.0),
                 color: data == 0 ? Colors.grey : Colors.purple,
@@ -162,6 +177,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
                       Flexible(
                           child: Container(
                         constraints: BoxConstraints(maxWidth: 200),
+                        //noi dung tin nhan
                         child: Text(
                           message,
                           style: const TextStyle(
@@ -173,6 +189,7 @@ class _ChatbotScreen1State extends State<ChatbotScreen1> {
                 )),
           ),
           data == 1
+          //h/a nguoi gui tn
               ? Container(
                   height: 40,
                   width: 40,

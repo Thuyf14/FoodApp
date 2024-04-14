@@ -16,7 +16,7 @@ class OrderItem with ChangeNotifier {
   late String payResult;
   late String customerId;
   late int orderStatus;
-
+//tra ve so luong san pham trong don hang
   int get productCount {
     return products.length;
   }

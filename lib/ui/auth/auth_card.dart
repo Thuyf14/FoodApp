@@ -7,7 +7,7 @@ import '../../model/http_exception.dart';
 import '../shared/dialog_utils.dart';
 
 import 'auth_manager.dart';
-
+//Hien thi giao dien xac thuc nguo dung, gom dang ki va dang nhap
 enum AuthMode { signup, login }
 
 class AuthCard extends StatefulWidget {
@@ -31,7 +31,9 @@ class _AuthCardState extends State<AuthCard> {
   };
   final _isSubmitting = ValueNotifier<bool>(false);
   final _passwordController = TextEditingController();
-
+  //Ham dc goi khi an nut dk or dnhap
+  //Ktr hop le form va du liru dau vao _authData
+  //login,signup goi ham login,signup tu AuthManager
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) {
       return;
@@ -64,7 +66,7 @@ class _AuthCardState extends State<AuthCard> {
 
     _isSubmitting.value = false;
   }
-
+//chuyen doi giua 2 che do, login qua sig va nguoc lai
   void _switchAuthMode() {
     if (_authMode == AuthMode.login) {
       setState(() {
@@ -80,6 +82,7 @@ class _AuthCardState extends State<AuthCard> {
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
+   //tao card, bo goc tron, do cao
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
@@ -90,8 +93,10 @@ class _AuthCardState extends State<AuthCard> {
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
+          //Single cho phep cuon nd neu vuot qua kich co mhinh
           child: SingleChildScrollView(
             child: Column(
+              //cac truong nhap, nut dieu huong
               children: <Widget>[
                 _buildEmailField(),
                 _buildPasswordField(),
@@ -121,14 +126,16 @@ class _AuthCardState extends State<AuthCard> {
       ),
     );
   }
-
+  //Nut van ban chuyen doi dang nhap, dang ki
   Widget _buildAuthModeSwitchButton() {
     return TextButton(
       onPressed: _switchAuthMode,
+      //thuoc tinh nut chuyen doi
       style: TextButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: TextStyle(
+          //color: Colors.blue,
           color: Theme.of(context).primaryColor,
         ),
       ),

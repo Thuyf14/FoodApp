@@ -11,7 +11,8 @@ import '../products/products_manager.dart';
 
 class EditProductScreen extends StatefulWidget {
   static const routeName = '/edit-product';
-
+  //Nhan doi tuong product va khoi tao no
+  // product null, 1 product moi se dc tao vs cac truong rong
   EditProductScreen(
     Product? product, {
     super.key,
@@ -43,7 +44,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final _imageUrlFocusNode = FocusNode();
   final _editForm = GlobalKey<FormState>();
   late Product _editedProduct;
-
+  //ktr Url image co hop le
+  //true vs bat dau http, https, end vs png, jpg,jpeg.
   var _isLoading = false;
   bool _isValidImageUrl(String value) {
     return (value.startsWith('http') ||
@@ -51,7 +53,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
         value.endsWith('.jpg') ||
         value.endsWith('.jpeg'));
   }
-
+// goi khi widget dc thiet lap
+//1 listener dc them de ktr, neu url khong hop le, k cap nhat
   @override
   void initState() {
     _imageUrlFocusNode.addListener(() {
@@ -66,14 +69,16 @@ class _EditProductScreenState extends State<EditProductScreen> {
     _imageUrlController.text = _editedProduct.imageUrl;
     super.initState();
   }
-
+  //goi khi widget bi huy
   @override
   void dispose() {
     _imageUrlController.dispose();
     _imageUrlFocusNode.dispose();
     super.dispose();
   }
-
+  //goi khi nhan save, ktr du lieu co hop le
+  //neu co thi cap nhat, them sp moi qua productsManager
+  //k, bao loi
   @override
   Future<void> _saveForm() async {
     final isValid = _editForm.currentState!.validate();
@@ -102,6 +107,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
     }
   }
 
+  //Giao dien chinh sua
+  //appbar tieu de va nut luu
+  //form de chinh sua...
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,7 +222,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   TextFormField buildPrice0Field() {
     return TextFormField(
       // Chuyển đổi giá trị double thành int và sau đó thành chuỗi
-      initialValue: _editedProduct.price0.toString(),
+      initialValue: _editedProduct.price0.toStringAsFixed(0),
       decoration: const InputDecoration(labelText: 'Giá gốc'),
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.number,
@@ -238,7 +246,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   TextFormField buildPriceField() {
     return TextFormField(
-      initialValue: _editedProduct.price.toString(),
+      initialValue: _editedProduct.price.toStringAsFixed(0),
       decoration: const InputDecoration(labelText: 'Giá bán'),
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.number,
@@ -280,7 +288,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
       },
     );
   }
-
+  // widget hien thi truoc cua sp, gom hinh anh dc tai tu url va 1 truong van ban url cho hinh anh
   Widget buildProductPreview() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,

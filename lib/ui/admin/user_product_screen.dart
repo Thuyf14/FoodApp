@@ -9,7 +9,7 @@ import 'search_admin.dart';
 import 'user_product_list_title.dart';
 
 import '../products/products_manager.dart';
-
+//Hien thi danh sach sp cua nguoi dung
 class UserProductsScreen extends StatelessWidget {
   static const routeName = '/admin-product';
   const UserProductsScreen({super.key});
@@ -22,6 +22,7 @@ class UserProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final productsManager = ProductsManager();
     return Scaffold(
+      //tim kiem, them sp moi trong appbar
         appBar: AppBar(
           title: const Text('Admin'),
           actions: [
@@ -51,18 +52,7 @@ class UserProductsScreen extends StatelessWidget {
             }));
   }
 }
-// Widget buildTotalProduct(ProductsManager productsManager){
-//     return Consumer<ProductsManager>(
-//       builder: (context, productsManager, child) {
-//         return Row(
-//           mainAxisAlignment: MainAxisAlignment.start,
-//           children: [
-//             Text("Tổng số sản phẩm là: ${productsManager.itemCount}", style: const TextStyle(color: Colors.grey, fontSize: 18),),
-//           ],
-//         );
-//       },
-//     );
-// }
+//thêm sp, chuyen huong den trang chinh sua
 Widget buildAddButton(BuildContext context) {
   return IconButton(
       onPressed: () {
@@ -80,6 +70,8 @@ Widget buildAddButton(BuildContext context) {
         },
         icon: const Icon(Icons.search));
   }
+  //Ds sp hien thi trong 1 listview
+  //Sp hien thi bang sd UserProductListTile, hien thi thong tin co ban ve sp va nut sua, xoa
 Widget buildUserProductListView(ProductsManager productsManager) {
   return Consumer<ProductsManager>(builder: (context, productsManager, child) {
     return ListView.builder(

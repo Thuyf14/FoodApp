@@ -14,6 +14,7 @@ import 'search_product.dart';
 // import 'search_product.dart';
 // import 'top_right_badge.dart';
 
+//giao dien chu, thanh appbar 
 enum FilterOptions { favorites, all }
 
 class ProductsOverviewScreen extends StatefulWidget {

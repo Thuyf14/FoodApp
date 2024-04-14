@@ -6,7 +6,7 @@ import '../../model/http_exception.dart';
 import '../../model/order_item.dart';
 import '../../services/order_service.dart';
 import '../shared/dialog_utils.dart';
-
+//Hien thi thong tin chi tiet don hang duoi the Card
 class OrderItemCard1 extends StatefulWidget {
   final OrderItem order;
   const OrderItemCard1(this.order, {super.key});

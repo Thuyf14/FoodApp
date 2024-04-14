@@ -8,14 +8,17 @@ import 'package:flutter/services.dart';
 
 class OrderService extends FirebaseService {
   OrderService() : super();
-
+//Tai danh sach cac don hang tu CSDL Firebase
+//orders luu tru cac don hang 
   Future<List<OrderItem>> fetchOrders() async {
     late List<OrderItem> orders = [];
     try {
       final authToken = (await AuthService().loadSavedAuthToken())!.token;
       final uid = (await AuthService().loadSavedAuthToken())!.userId;
+      //sd token va id nguoi dung de tao url yeu cau dua tren thong tin dat hang cua ngdung
       final ordersUrl = Uri.parse(
           '$databaseUrl/orders.json?orderBy="customerId"&equalTo="$uid"&auth=$authToken');
+      //in ra url va sao chep vao clipboard     
       print(ordersUrl);
       await Clipboard.setData(ClipboardData(text: ordersUrl.toString()));
       ;
@@ -25,7 +28,9 @@ class OrderService extends FirebaseService {
       final ordersMap = json.decode(response.body) as Map<dynamic, dynamic>;
       print("order map: ");
       print(ordersMap.values);
+      //http 200 xu ly thanh cong
       if (response.statusCode != 200) {
+        //xu ly loi va tra ve danh sach don hang rong
         print(ordersMap['error']);
         return orders;
       }
@@ -38,7 +43,7 @@ class OrderService extends FirebaseService {
       return orders;
     }
   }
-
+//Them don hang moi vao CSDL firebase
   Future<OrderItem?> addOrder(OrderItem order) async {
     try {
       final url = Uri.parse('$databaseUrl/orders.json?auth=$token');
@@ -56,7 +61,7 @@ class OrderService extends FirebaseService {
       return null;
     }
   }
-
+//Cap nhat thog tin don hang da ton tai trong CSDL firebase
       Future<bool> updateOrder(OrderItem order) async {
     try {
       final url = Uri.parse('$databaseUrl/orders/${order.id}.json?auth=$token');

@@ -5,6 +5,7 @@ import '../../../model/cart_item.dart';
 import '../shared/dialog_utils.dart';
 import '../cart/cart_manager.dart';
 
+//Hien thi thong tin 1 sp trong gio hang
 class CartItemCard extends StatefulWidget {
   final String productId;
   final CartItem cardItem;
@@ -72,7 +73,7 @@ class _CartItemCardState extends State<CartItemCard> {
           ),
           title: Text(widget.cardItem.title),
           subtitle: Text(
-              'Giá: ${(widget.cardItem.price)}'),
+              'Giá: ${(widget.cardItem.price).toStringAsFixed(0)}'),
           trailing: Text('SL: ${widget.cardItem.quantity}'),
         ),
       ),

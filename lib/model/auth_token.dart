@@ -1,8 +1,8 @@
 class AuthToken {
-  final String _token;
+  final String _token; //final gtr khong thay doi sau khi khoi tao
   final String _userId;
-  final DateTime _expiryDate;
-  late String _role = "user";
+  final DateTime _expiryDate; //ngay het han cua token
+  late String _role = "user"; //vai tro
 
   AuthToken({
     token,
@@ -25,7 +25,7 @@ class AuthToken {
   }
 
   String? get token {
-    if (_expiryDate.isAfter(DateTime.now())) {
+    if (_expiryDate.isAfter(DateTime.now())) { //token chua het han
       return _token;
     }
     return null;
